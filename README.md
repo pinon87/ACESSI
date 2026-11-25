@@ -2,7 +2,7 @@
 
 **Mais autonomia e mais segurança pra quem precisa**
 
-Plataforma de navegação interna que conecta visitantes e gestores de estabelecimentos por meio de rotas passo a passo dentro de ambientes públicos fechados, como shoppings.
+Plataforma de navegação interna que conecta visitantes e gestores de estabelecimentos por meio de rotas passo a passo dentro de ambientes públicos fechados, como shoppings
 
 Este repositório contém o desenvolvimento inicial do **Acessi** em Python puro, aplicando conceitos de Fundamentos de Programação, persistência em arquivos `.txt`, controle de versão com Git e colaboração no GitHub.
 
