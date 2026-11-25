@@ -3,3 +3,4 @@ Shopping Recife|C&A|Terreo|Siga em frente por 20 passos / Vire a esquerda / Siga
 Shopping Recife|Renner|1o andar|Vire a direita / Siga ate o elevador / Suba ao primeiro andar / Vire a esquerda / Destino a frente
 Shopping Recife|Lojas Americanas|Terreo|Siga em frente por 12 passos / Vire a esquerda / Siga em frente por 6 passos / Destino a direita
 Shopping Recife|Banheiro|Terreo|Siga em frente por 8 passos / Vire a direita / Siga em frente por 4 passos / Destino a esquerda
+-
