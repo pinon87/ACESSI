@@ -1,99 +1,41 @@
-# ACESSI
+# Acessi - Sistema de Navegação Indoor
 
-**Mais autonomia e mais segurança pra quem precisa**
+O **Acessi** é um protótipo de aplicativo em linha de comando (CLI) desenvolvido em Python para auxiliar pessoas com deficiência visual na navegação indoor (ambientes internos como shoppings, centros comerciais e edifícios). O sistema fornece rotas descritivas passo a passo a partir de pontos de referência e contagem de passos, além de oferecer um módulo administrativo para gestores de estabelecimentos.
 
-Plataforma de navegação interna que conecta visitantes e gestores de estabelecimentos por meio de rotas passo a passo dentro de ambientes públicos fechados, como shoppings
-
-Este repositório contém o desenvolvimento inicial do **Acessi** em Python puro, aplicando conceitos de Fundamentos de Programação, persistência em arquivos `.txt`, controle de versão com Git e colaboração no GitHub.
-
-*Projeto acadêmico em desenvolvimento. O escopo atual contempla o fluxo de usuários gerais e gestores de estabelecimentos para validação da lógica de navegação.*
+Projeto desenvolvido como atividade acadêmica para a disciplina de **Fundamentos da Programação** (1º período do curso de Análise e Desenvolvimento de Sistemas - ADS).
 
 ---
 
-## Sobre o projeto
+## Funcionalidades
 
-O **Acessi** nasceu como um projeto acadêmico com o propósito de solucionar a dificuldade de locomoção em ambientes públicos internos sem sinalização adequada — pensando originalmente na autonomia de pessoas cegas.
+### Perfil Usuário
+* **Cadastro e Login:** Criação de conta e acesso via e-mail.
+* **Consulta de Rotas:** Seleção de lojas ou pontos de interesse cadastrados, exibindo o andar e o trajeto detalhado passo a passo (direções e quantidade de passos).
+* **Confirmação de Chegada:** Registro de conclusão de trajeto para contabilização no relatório do estabelecimento.
 
-Nesta primeira versão do sistema, o foco está na validação da estrutura de cadastro, criação de rotas internas e registro de acessos, atendendo dois perfis: **usuários gerais** (que buscam chegar a uma loja ou ponto específico) e **gestores de locais** (inicialmente shoppings, responsáveis por mapear e gerenciar os trajetos).
-
----
-
-## Objetivos
-
-- Facilitar a localização de lojas e pontos internos em estabelecimentos fechados.
-- Padronizar instruções de deslocamento em passos simples e diretos.
-- Oferecer aos gestores um painel para cadastrar, atualizar e monitorar rotas e acessos.
-- Construir uma base lógica modular em Python que possa evoluir futuramente para recursos voltados a pessoas com deficiência visual.
+### Perfil Gestor
+* **Cadastro e Login:** Acesso administrativo vinculado a um estabelecimento específico.
+* **Gerenciamento de Locais (CRUD):** Cadastro, listagem, edição e exclusão de lojas, andares e suas respectivas rotas.
+* **Relatório de Acessos:** Consulta da quantidade de visitas concluídas por loja na data informada.
 
 ---
 
-##  Área do usuário — funcionalidades implementadas
+## Estrutura do Projeto
 
-- Cadastro e login por e-mail.
-- Listagem das lojas disponíveis com identificação do estabelecimento e andar.
-- Visualização da rota dividida passo a passo.
-- Confirmação de chegada ao destino.
-- Registro automático de acesso concluído na data atual.
+O repositório já inclui a base de dados pré-populada para fins de apresentação e avaliação imediata:
 
----
-
-##  Área do gestor — funcionalidades implementadas
-
-- Cadastro e login vinculados ao estabelecimento (shopping) onde trabalha.
-- Cadastro de novas lojas com andar e instruções de rota separadas por etapas.
-- Consulta de todas as lojas e rotas cadastradas do seu estabelecimento.
-- Atualização de nome, andar e trajeto de lojas existentes.
-- Exclusão de lojas do sistema.
-- Relatório diário de quantidade de acessos concluídos por loja.
+* `main.py`: Código-fonte principal contendo toda a lógica de menus, validações, persistência e geração de relatórios.
+* `lojas.txt`: Base de dados pré-carregada com cinco destinos de exemplo no **Shopping Recife** (Perfumaria Queen, C&A, Renner, Lojas Americanas e Banheiro), separados por `|`[cite: 4].
+* `cadastros.txt`: Base de dados pré-carregada com o registro do gestor de demonstração.
+* `acessi_carga_completa_v2.txt`: Arquivo de controle interno que indica que a carga inicial de demonstração já foi realizada, evitando duplicações ao iniciar o programa[cite: 1, 2].
+* `acessos.txt`: Arquivo criado automaticamente durante o uso para registrar o histórico de chegadas confirmadas pelos usuários.
 
 ---
 
-##  Como a navegação funciona
+## Pré-requisitos e Execução
 
-1. O gestor cadastra o estabelecimento e registra as lojas com seus respectivos andares e rotas passo a passo.
-2. O usuário realiza o cadastro e acessa o menu de navegação.
-3. O usuário escolhe a loja de destino na lista disponível.
-4. O sistema exibe o trajeto dividido em instruções sequenciais (ex.: *em frente, direita, esquerda, subir, descer*).
-5. Ao finalizar o percurso, o usuário confirma a chegada e o sistema contabiliza o acesso para o relatório do gestor.
-
----
-
-##  Acessibilidade e escopo atual
-
-Embora a visão de longo prazo do **Acessi** seja guiar pessoas cegas em ambientes internos sem sinalização tátil ou sonora, esta etapa acadêmica prioriza o fluxo de **usuários gerais** e **gestores**.
-
-A estruturação das rotas em comandos curtos e textuais (`DIRECOES`) já prepara a lógica do sistema para futuras integrações com leitores de tela, comandos de voz e feedback auditivo.
-
----
-
-##  Tecnologias e ferramentas
-
-| Tecnologia | Finalidade |
-| :--- | :--- |
-| **Python** | Lógica principal, estruturas de dados (listas, tuplas, dicionários) e menus no terminal |
-| **Arquivos `.txt`** | Persistência simples dos dados (`cadastros.txt`, `lojas.txt` e `acessos.txt`) sem bibliotecas externas |
-| **Git** | Controle de versão e histórico de alterações |
-| **GitHub** | Hospedagem do código, organização de tarefas e trabalho em equipe |
-
----
-
-##  Etapas de desenvolvimento
-
-- [x] Definir a proposta e o recorte inicial do Acessi.
-- [x] Implementar leitura e escrita de dados em arquivos `.txt`.
-- [x] Implementar cadastro e autenticação de usuários e gestores.
-- [x] Implementar CRUD completo de lojas e rotas para gestores.
-- [x] Implementar visualização passo a passo de rotas e confirmação de chegada.
-- [x] Implementar relatório diário de acessos por estabelecimento.
-- [ ] Modularizar o código em arquivos separados (`menu`, `usuarios`, `lojas`, `arquivos`).
-- [ ] Adicionar validações extras de entrada e tratamento de erros.
-- [ ] Evoluir a interface e recursos de acessibilidade para pessoas com deficiência visual.
-
----
-
-##  Execução
-
-1. Certifique-se de ter o **Python 3** instalado na máquina.
-2. Clone este repositório:
+1. Certifique-se de ter o **Python 3** instalado em sua máquina.
+2. Clone este repositório ou baixe os arquivos:
    ```bash
-   git clone [https://github.com/seu-usuario/APP-ACESSI.git](https://github.com/seu-usuario/APP-ACESSI.git)
+   git clone [https://github.com/seu-usuario/acessi-navegacao-indoor.git](https://github.com/seu-usuario/acessi-navegacao-indoor.git)
+   cd acessi-navegacao-indoor
